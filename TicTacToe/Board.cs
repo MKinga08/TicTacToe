@@ -1,9 +1,5 @@
 ﻿using Program;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace TicTacToe
 {
@@ -38,7 +34,7 @@ namespace TicTacToe
                 change = true;
             }
         }
-        public bool CheckWinner()
+        public void CheckWinner(Player ActualPlayer)
         {
             if (arr[1] == arr[2] && arr[1] == arr[3] && arr[1] != ' ' ||
                 arr[4] == arr[5] && arr[4] == arr[6] && arr[4] != ' ' ||
@@ -49,16 +45,15 @@ namespace TicTacToe
                 arr[1] == arr[5] && arr[5] == arr[9] && arr[1] != ' ' ||
                 arr[3] == arr[5] && arr[5] == arr[7] && arr[3] != ' ')
             {
-                Console.WriteLine("You won the game!");
-                return true;
+                Console.WriteLine($"You won the game {ActualPlayer.name}!");
+                ActualPlayer.HasWon = true;
             }
             else if(arr[1] != ' ' && arr[2] != ' ' && arr[3] != ' ' && arr[4] != ' ' && arr[5] != ' ' &&
                 arr[6] != ' ' && arr[7] != ' ' && arr[8] != ' ' && arr[9] != ' ')
             {
                 Console.WriteLine("Its a draw!");
-                return true;
+                ActualPlayer.HasWon = true;
             }
-            return false;
         }
     }
 }

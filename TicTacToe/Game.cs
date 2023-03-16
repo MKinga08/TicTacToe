@@ -1,10 +1,4 @@
 ﻿using Program;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace TicTacToe
 {
@@ -28,11 +22,12 @@ namespace TicTacToe
                 int coordinate = GetMove();
                 PlaceSymbol(coordinate);
                 Gameboard.PrintBoard();
-                ChangePlayer();
-                if (Gameboard.CheckWinner())
+                Gameboard.CheckWinner(ActualPlayer);
+                if (ActualPlayer.HasWon == true)
                 {
-                    break;
-                };
+                    Environment.Exit(0);
+                }
+                ChangePlayer();
             }
         }
         public void InitializingGame()

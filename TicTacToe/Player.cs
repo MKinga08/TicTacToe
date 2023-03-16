@@ -5,9 +5,9 @@ namespace Program
 {
     public class Player
 	{
-		private string name;
+		public string name;
         private char symbol;
-
+        public bool HasWon { get; set; } = default;
         public Player(string aName, char aSymbol)
         {
             name = aName;
@@ -17,6 +17,5 @@ namespace Program
         {
             return symbol; 
         }
-       
     }
 }

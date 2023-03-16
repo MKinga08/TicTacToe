@@ -12,7 +12,6 @@ namespace TicTacToe
         {
             var game = new Game();
             game.GamePhase();
-           
         }
         
     }
