@@ -24,9 +24,18 @@ namespace TicTacToe
             Console.WriteLine("     |     |      ");
         }
 
-        public void Place(int coordinate, char symbol)
+        public void Place(int coordinate, char symbol, out bool change)
         {
-            arr[coordinate] = symbol;
+            change = false;
+            if (arr[coordinate] == ' ')
+            {
+                arr[coordinate] = symbol;
+            }
+            else
+            {
+                change = true;
+            }
         }
+        
     }
 }
