@@ -53,6 +53,8 @@ namespace TicTacToe
             {
                 Console.WriteLine("Its a draw!");
                 ActualPlayer.HasWon = true;
+
+
             }
         }
     }
