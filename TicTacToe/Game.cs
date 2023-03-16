@@ -29,6 +29,10 @@ namespace TicTacToe
                 PlaceSymbol(coordinate);
                 Gameboard.PrintBoard();
                 ChangePlayer();
+                if (Gameboard.CheckWinner())
+                {
+                    break;
+                };
             }
         }
         public void InitializingGame()
@@ -59,7 +63,6 @@ namespace TicTacToe
             Console.WriteLine($"Which character would you like to be {name}? X or O?");
             var x = Console.ReadLine()!;
             char symbol1 = Convert.ToChar(x);
-
             var symbol = char.ToUpper(symbol1);
 
             Player player = new(name, symbol);

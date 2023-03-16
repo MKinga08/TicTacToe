@@ -7,7 +7,7 @@ namespace Program
 	{
 		private string name;
         private char symbol;
-   
+
         public Player(string aName, char aSymbol)
         {
             name = aName;
